@@ -1,6 +1,8 @@
 # alhk
 Online train and test approach with Flask and sqlAlchemy  
 
+NOTE - PLEASE GIVE LEARNING EXAMPLES TO THE MODEL BEFORE CALLING THE TRAINING OPTION. THE TRAIN REQUEST ASSUMES THAT THERE IS DATA ALREADY PRESENT IN THE DATABASE. IN CASE THERE IS NO DATA THEN THE SERVER WILL GIVE INTERNAL ERROR. SUMBIT AT LEAST TWO TRAINING EXAMPLES TO THE MODEL BEFORE TRAINING. Sorry for the caps. But this is **IMPORTANT**
+
 What is this repo?  
 Here I have created a demo web app engine which accepts training data from the user (one datapoint at a time) and save the data onto the server (sql). Later on user can train the dataset using the predefined xgboost model. Training data is time consuming and you may run into timeout requests. You can decrease the time by decresing the number of boosting rounds in the file xgboost.py. Once a user is ready to test the model, they can simply provide the server with the input features and voila! the server returns the target variable.  
 
