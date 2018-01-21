@@ -21,7 +21,9 @@ There are two ways to access the API
 1. Website  
 In case you want to type the data directly into the form to save yourself from typing all the curl commands you can directly visit the website: https://alhk.herokuapp.com/. I have an option for live chat in case you have any questions for me.  
 2. Curl API calls  
-Here are the curl calls you can make in order to achieve the desired effect.  
+Here are the curl calls you can make in order to achieve the desired effect. 
+
+
 A. learn  
 curl -H "Content-Type: application/json" -X POST -d '{"age": 1.1, "species": "cat", "score": 3.1}' https://alhk.herokuapp.com/learn/
 
