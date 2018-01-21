@@ -36,4 +36,12 @@ C. predict
 curl -H "Content-Type: application/json" -X POST -d '{"age": 1.1, "species": "cat"}' https://alhk.herokuapp.com/predict/
 
 D. reset
-curl -X POST https://alhk.herokuapp.com/reset/
+curl -X POST https://alhk.herokuapp.com/reset/  
+
+If you want to have a look at the code then here is a brief about the major files you would like to see -  
+app.py - main starting point. This is what heroku runs on starting up
+xgboost.py - it contains the main functions where I train, predict, learn the model
+synthetic folder - in case you don't want to send each training request bit by bit you can directly use the notebooks in this folder to read a csv file into a dataframe and then use the pre-written xgboost model to get a model. You have to edit some code in here to suit your particular needs. 
+
+
+
