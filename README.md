@@ -1,7 +1,12 @@
 # alhk
 Online train and test approach with Flask and sqlAlchemy  
 
-NOTE - PLEASE GIVE LEARNING EXAMPLES TO THE MODEL BEFORE CALLING THE TRAINING OPTION. THE TRAIN REQUEST ASSUMES THAT THERE IS DATA ALREADY PRESENT IN THE DATABASE. IN CASE THERE IS NO DATA THEN THE SERVER WILL GIVE INTERNAL ERROR. SUMBIT AT LEAST TWO TRAINING EXAMPLES TO THE MODEL BEFORE TRAINING. Sorry for the caps. But this is **IMPORTANT**
+NOTE - PLEASE GIVE LEARNING EXAMPLES TO THE MODEL BEFORE CALLING THE TRAINING OPTION. THE TRAIN REQUEST ASSUMES THAT THERE IS DATA ALREADY PRESENT IN THE DATABASE. IN CASE THERE IS NO DATA THEN THE SERVER WILL GIVE INTERNAL ERROR. SUMBIT AT LEAST TWO TRAINING EXAMPLES TO THE MODEL BEFORE TRAINING. Sorry for the caps. But this is **IMPORTANT**  
+
+Tech Stack -  
+1. Python Flask & PostgreSQL  
+2. Frontend - HTML/JS/CSS (Basic)  
+3. xgboost library 
 
 What is this repo?  
 Here I have created a demo web app engine which accepts training data from the user (one datapoint at a time) and save the data onto the server (sql). Later on user can train the dataset using the predefined xgboost model. Training data is time consuming and you may run into timeout requests. You can decrease the time by decresing the number of boosting rounds in the file xgboost.py. Once a user is ready to test the model, they can simply provide the server with the input features and voila! the server returns the target variable.  
@@ -44,6 +49,11 @@ If you want to have a look at the code then here is a brief about the major file
 app.py - main starting point. This is what heroku runs on starting up
 xgboost.py - it contains the main functions where I train, predict, learn the model
 synthetic folder - in case you don't want to send each training request bit by bit you can directly use the notebooks in this folder to read a csv file into a dataframe and then use the pre-written xgboost model to get a model. You have to edit some code in here to suit your particular needs. 
+
+**NOTE**  
+You need to add SQL Plugin to your heroku app if you want to use it on heroku. And in case you are planning to host the app on heroku you will also need to define a Procfile. The Procfile will look something like -  
+web: gunicorn app:app
+
 
 
 
